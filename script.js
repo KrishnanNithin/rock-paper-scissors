@@ -9,7 +9,7 @@ function computerPlay(){
 }
 
 function playRound(playerSelection, compSelection){
-    playerSelection = playerSelection.casefold();
+    playerSelection = playerSelection.toLowerCase();
     if (playerSelection == compSelection) {
         return "Oops, looks like a draw..."
     }
@@ -27,11 +27,14 @@ function playRound(playerSelection, compSelection){
 function game(){
     for (let i = 0; i < 5; i++) {
         player = prompt("Enter your selection. ")
-        playRound(player, computerPlay())
+        console.log(playRound(player, computerPlay()))
      }
     if (score >= 3) {
         console.log("You win! Humanity has been saved!")
     } 
+    else {
+        console.log("You lose.. Who shall save humanity now?")
+    }
 }
 
 game()
